@@ -18,7 +18,16 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-gray-200/80 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/80">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8">
-        <Link href="/" className="text-xl font-bold tracking-tight text-primary sm:text-2xl">
+        <Link
+          href="/"
+          className="text-2xl font-black tracking-tight sm:text-3xl"
+          style={{
+            background: "linear-gradient(135deg, #111827 0%, #2563EB 100%)",
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+            backgroundClip: "text",
+          }}
+        >
           SalesMy
         </Link>
 
