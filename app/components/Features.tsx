@@ -37,27 +37,29 @@ export function Features() {
           </p>
         </SectionFade>
 
-        <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:mt-16 lg:grid-cols-3">
+        <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:mt-16 lg:grid-cols-3 lg:items-stretch">
           {features.map((item, i) => (
-            <SectionFade key={item.title} delayOrder={2 + i}>
-              <div className="rounded-2xl border border-gray-200 bg-bgGray/50 p-6 sm:p-8">
-                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-accent text-white">
+            <SectionFade key={item.title} delayOrder={2 + i} className="h-full">
+              <div className="flex h-full flex-col rounded-2xl border border-gray-200 bg-bgGray/50 p-6 sm:p-8">
+                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-accent text-white">
                   <item.icon className="h-7 w-7" />
                 </div>
                 <h3 className="mt-5 text-lg font-semibold text-primary">{item.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-primary/70">{item.desc}</p>
+                <p className="mt-3 flex-1 text-sm leading-relaxed text-primary/70 break-keep">{item.desc}</p>
               </div>
             </SectionFade>
           ))}
         </div>
 
         <SectionFade delayOrder={5} className="mt-12 text-center">
-          <Link
-            href="#cta"
+          <a
+            href="https://pf.kakao.com/_eBxjyn"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex rounded-full bg-accent px-6 py-3 text-sm font-semibold text-white transition hover:bg-accent/90"
           >
             지금 신청하고 매출 올리기
-          </Link>
+          </a>
         </SectionFade>
       </div>
     </section>

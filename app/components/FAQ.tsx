@@ -25,14 +25,14 @@ export function FAQ() {
 
   return (
     <section className="bg-bgGray px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
-      <div className="mx-auto max-w-3xl">
+      <div className="mx-auto max-w-6xl">
         <SectionFade>
           <h2 className="text-center text-2xl font-bold text-primary sm:text-3xl">
             자주 묻는 질문
           </h2>
         </SectionFade>
 
-        <div className="mt-12 space-y-3">
+        <div className="mx-auto mt-12 max-w-3xl space-y-3">
           {faqs.map((faq, i) => (
             <SectionFade key={faq.q} delayOrder={i}>
               <div className="overflow-hidden rounded-xl border border-gray-200 bg-white">

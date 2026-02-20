@@ -31,35 +31,35 @@ export function ProblemSolution() {
           </p>
         </SectionFade>
 
-        <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:mt-16">
-          <SectionFade delayOrder={2}>
-            <div className="rounded-2xl border-2 border-red-100 bg-red-50/50 p-6 sm:p-8">
+        <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:mt-16 lg:items-stretch">
+          <SectionFade delayOrder={2} className="h-full">
+            <div className="flex h-full flex-col rounded-2xl border-2 border-red-100 bg-red-50/50 p-6 sm:p-8">
               <div className="flex items-center gap-2 text-red-600">
-                <X className="h-5 w-5" />
+                <X className="h-5 w-5 shrink-0" />
                 <span className="font-semibold">기존 명함</span>
               </div>
-              <ul className="mt-4 space-y-3">
+              <ul className="mt-4 flex-1 space-y-3 break-keep">
                 {oldWay.map((item) => (
                   <li key={item} className="flex items-start gap-2 text-primary/80">
-                    <span className="mt-0.5 text-red-400">•</span>
-                    {item}
+                    <span className="mt-0.5 shrink-0 text-red-400">•</span>
+                    <span>{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
           </SectionFade>
 
-          <SectionFade delayOrder={3}>
-            <div className="rounded-2xl border-2 border-accent/30 bg-accent/5 p-6 sm:p-8">
+          <SectionFade delayOrder={3} className="h-full">
+            <div className="flex h-full flex-col rounded-2xl border-2 border-accent/30 bg-accent/5 p-6 sm:p-8">
               <div className="flex items-center gap-2 text-accent">
-                <Check className="h-5 w-5" />
+                <Check className="h-5 w-5 shrink-0" />
                 <span className="font-semibold">SalesMy</span>
               </div>
-              <ul className="mt-4 space-y-3">
+              <ul className="mt-4 flex-1 space-y-3 break-keep">
                 {ourWay.map((item) => (
                   <li key={item} className="flex items-start gap-2 font-medium text-primary">
                     <Check className="mt-0.5 h-4 w-4 shrink-0 text-accent" />
-                    {item}
+                    <span>{item}</span>
                   </li>
                 ))}
               </ul>
@@ -68,12 +68,14 @@ export function ProblemSolution() {
         </div>
 
         <SectionFade delayOrder={4} className="mt-10 text-center">
-          <Link
-            href="#cta"
+          <a
+            href="https://pf.kakao.com/_eBxjyn"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex rounded-full bg-accent px-6 py-3 text-sm font-semibold text-white transition hover:bg-accent/90"
           >
             지금 신청하고 매출 올리기
-          </Link>
+          </a>
         </SectionFade>
       </div>
     </section>

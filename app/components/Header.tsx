@@ -17,7 +17,7 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-gray-200/80 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/80">
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:h-18 sm:px-6 lg:px-8">
+      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link href="/" className="text-xl font-bold tracking-tight text-primary sm:text-2xl">
           SalesMy
         </Link>
@@ -35,12 +35,14 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-3">
-          <Link
-            href="#cta"
+          <a
+            href="https://pf.kakao.com/_eBxjyn"
+            target="_blank"
+            rel="noopener noreferrer"
             className="hidden rounded-full bg-accent px-5 py-2.5 text-sm font-semibold text-white shadow-md transition hover:bg-accent/90 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 sm:inline-flex"
           >
             무료 상담 신청
-          </Link>
+          </a>
           <button
             type="button"
             aria-label="메뉴 열기"
@@ -91,13 +93,15 @@ export function Header() {
                     {item.label}
                   </Link>
                 ))}
-                <Link
-                  href="#cta"
+                <a
+                  href="https://pf.kakao.com/_eBxjyn"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="mt-4 inline-flex justify-center rounded-full bg-accent px-5 py-3 font-semibold text-white"
                   onClick={() => setOpen(false)}
                 >
                   무료 상담 신청
-                </Link>
+                </a>
               </nav>
             </motion.div>
           </motion.div>

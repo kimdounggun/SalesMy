@@ -8,15 +8,19 @@ const plans = [
   {
     name: "Basic",
     price: "99,000",
+    originalPrice: "150,000",
+    discount: 34,
     unit: "1회",
     desc: "기본 프로필 + 전화/카톡 링크 (평생 소장)",
     features: ["모바일 프로필 페이지", "전화/카톡 링크", "평생 소장", "1회 수정 무료"],
-    cta: "문의하기",
+    cta: "지금 신청하기",
     highlight: false,
   },
   {
     name: "Pro",
     price: "199,000",
+    originalPrice: "300,000",
+    discount: 33,
     unit: "+ 월 1만",
     desc: "상담 DB 수집 폼 + 실시간 알림 + 구글 시트 연동",
     features: [
@@ -26,7 +30,7 @@ const plans = [
       "구글 시트 연동",
       "월 1회 무료 수정",
     ],
-    cta: "가장 인기",
+    cta: "지금 신청하기",
     highlight: true,
   },
   {
@@ -34,7 +38,7 @@ const plans = [
     price: "상담 문의",
     unit: "",
     desc: "맞춤형 디자인 + PG 결제 연동 등 커스텀 개발",
-    features: ["Pro 포함", "맞춤 디자인", "PG 결제 연동", "전담 매니저", "무제한 수정"],
+    features: ["Pro 포함", "맞춤 디자인", "PG 결제 연동", "무제한 수정"],
     cta: "상담 신청",
     highlight: false,
   },
@@ -71,16 +75,33 @@ export function Pricing() {
                     BEST
                   </div>
                 )}
+                {"discount" in plan && plan.discount && (
+                  <div className="absolute -top-3 right-4 rounded-full bg-red-500 px-2.5 py-1 text-xs font-bold text-white">
+                    {plan.discount}% 할인
+                  </div>
+                )}
                 <h3 className="text-xl font-bold text-primary">{plan.name}</h3>
-                <div className="mt-2 flex items-baseline gap-1">
-                  <span className="text-2xl font-bold text-primary sm:text-3xl">
-                    {plan.price}
-                  </span>
-                  {plan.unit && (
-                    <span className="text-sm text-primary/70">원/{plan.unit}</span>
+                <div className="mt-2">
+                  {"originalPrice" in plan && plan.originalPrice && (
+                    <div className="mb-1 flex items-center gap-2">
+                      <span className="text-sm text-primary/50 line-through">
+                        {plan.originalPrice}원
+                      </span>
+                      <span className="text-xs font-semibold text-red-500">
+                        지금만 특가
+                      </span>
+                    </div>
                   )}
+                  <div className="flex flex-wrap items-baseline gap-x-1 gap-y-0">
+                    <span className="text-2xl font-bold text-primary sm:text-3xl">
+                      {plan.price}
+                    </span>
+                    {plan.unit && (
+                      <span className="text-sm text-primary/70">원/{plan.unit}</span>
+                    )}
+                  </div>
                 </div>
-                <p className="mt-2 text-sm text-primary/70">{plan.desc}</p>
+                <p className="mt-2 text-sm leading-relaxed text-primary/70">{plan.desc}</p>
                 <ul className="mt-6 flex-1 space-y-3">
                   {plan.features.map((f) => (
                     <li key={f} className="flex items-start gap-2 text-sm text-primary">
@@ -89,8 +110,10 @@ export function Pricing() {
                     </li>
                   ))}
                 </ul>
-                <Link
-                  href="#cta"
+                <a
+                  href="https://pf.kakao.com/_eBxjyn"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className={`mt-auto block w-full rounded-xl py-3.5 text-center text-sm font-semibold transition ${
                     plan.highlight
                       ? "bg-accent text-white hover:bg-accent/90"
@@ -98,19 +121,21 @@ export function Pricing() {
                   }`}
                 >
                   {plan.cta}
-                </Link>
+                </a>
               </div>
             </SectionFade>
           ))}
         </div>
 
         <SectionFade delayOrder={5} className="mt-12 text-center">
-          <Link
-            href="#cta"
+          <a
+            href="https://pf.kakao.com/_eBxjyn"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex rounded-full bg-accent px-6 py-3 text-sm font-semibold text-white transition hover:bg-accent/90"
           >
             지금 신청하고 매출 올리기
-          </Link>
+          </a>
         </SectionFade>
       </div>
     </section>

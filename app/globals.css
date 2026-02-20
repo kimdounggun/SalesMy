@@ -7,6 +7,22 @@
   --accent: #2563EB;
   --accent-gold: #F59E0B;
   --bg-gray: #F3F4F6;
+  --section-px: 1rem;   /* px-4 */
+  --section-py: 4rem;    /* py-16 */
+  --content-max: 72rem;  /* max-w-6xl */
+}
+
+@media (min-width: 640px) {
+  :root {
+    --section-px: 1.5rem;  /* sm:px-6 */
+    --section-py: 5rem;    /* sm:py-20 */
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --section-px: 2rem;  /* lg:px-8 */
+  }
 }
 
 html {
@@ -42,4 +58,9 @@ body {
 .phone-scroll img {
   transform: translateZ(0);
   backface-visibility: hidden;
+}
+
+/* 한글 단어 중간 줄바꿈 방지 (지/직/득 등 한 글자만 떨어지는 현상) */
+.break-keep {
+  word-break: keep-all;
 }

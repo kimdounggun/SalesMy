@@ -8,7 +8,7 @@ import { SectionFade } from "./SectionFade";
 const reviews = [
   {
     text: "문의가 2배 늘었어요. 명함 대신 링크 하나만 보내니까 고객이 더 편해하시더라고요.",
-    author: "보험설계사 K씨",
+    author: "보험설계사 K님",
   },
   {
     text: "고객이 명함 예쁘다고 칭찬해요. 상담 신청 폼 덕분에 리드 관리도 한곳에서 됩니다.",
@@ -36,7 +36,7 @@ export function Review() {
 
   return (
     <section id="review" className="bg-bgGray px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
-      <div className="mx-auto max-w-4xl">
+      <div className="mx-auto max-w-6xl">
         <SectionFade>
           <h2 className="text-center text-2xl font-bold text-primary sm:text-3xl">
             이미 100+명의 전문가가 사용 중입니다
@@ -48,7 +48,7 @@ export function Review() {
           </p>
         </SectionFade>
 
-        <SectionFade delayOrder={2} className="mt-12">
+        <SectionFade delayOrder={2} className="mx-auto mt-12 max-w-4xl">
           <div className="relative overflow-hidden rounded-2xl border border-gray-200 bg-white p-8 shadow-sm sm:p-10">
             <Quote className="absolute right-6 top-6 h-10 w-10 text-accent/20" />
             <AnimatePresence mode="wait">

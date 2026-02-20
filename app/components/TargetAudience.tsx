@@ -41,15 +41,15 @@ export function TargetAudience() {
           </p>
         </SectionFade>
 
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:mt-16 lg:grid-cols-4">
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:mt-16 lg:grid-cols-4 lg:items-stretch">
           {items.map((item, i) => (
-            <SectionFade key={item.title} delayOrder={2 + i}>
-              <div className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm transition hover:border-accent/30 hover:shadow-md">
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-accent/10 text-accent">
+            <SectionFade key={item.title} delayOrder={2 + i} className="h-full">
+              <div className="flex h-full flex-col rounded-2xl border border-gray-200 bg-white p-6 shadow-sm transition hover:border-accent/30 hover:shadow-md">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-accent/10 text-accent">
                   <item.icon className="h-6 w-6" />
                 </div>
                 <h3 className="mt-4 font-semibold text-primary">{item.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-primary/70">{item.desc}</p>
+                <p className="mt-2 flex-1 text-sm leading-relaxed text-primary/70 break-keep">{item.desc}</p>
               </div>
             </SectionFade>
           ))}
