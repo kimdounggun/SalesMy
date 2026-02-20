@@ -22,18 +22,20 @@ export function PhoneScroll() {
             scrollBehavior: "smooth",
           }}
         >
-          {/* 수동 스크롤: 마우스 휠·트랙패드·터치로 직접 내리면서 볼 수 있음 */}
-          <div className="min-h-full w-full">
-            {/* 고화질: public/phone-profile.png 를 560px 이상 너비로 넣으면 더 선명함 */}
+          {/* 이미지 컨테이너: 스크롤 가능하도록 설정 */}
+          <div className="w-full">
             <img
               src="/phone-profile.png"
               alt="휴대폰에서 본 보험 전문가 프로필 화면"
-              className="block w-full select-none pointer-events-none"
-              style={{ height: "auto", display: "block" }}
+              className="block w-full h-auto select-none pointer-events-none"
+              style={{
+                display: "block",
+                maxWidth: "100%",
+                objectFit: "contain",
+                objectPosition: "top",
+              }}
               draggable={false}
               fetchPriority="high"
-              width={560}
-              height={1200}
             />
           </div>
         </div>

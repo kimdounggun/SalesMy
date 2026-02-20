@@ -68,7 +68,8 @@ export function ProblemSolution() {
           </SectionFade>
         </div>
 
-        <SectionFade delayOrder={4} className="mt-10 text-center">
+        {/* 모바일에서는 CTA 제거 (하단 고정 버튼 사용), 데스크톱만 표시 */}
+        <SectionFade delayOrder={4} className="mt-10 hidden text-center md:block">
           <a
             href="https://pf.kakao.com/_eBxjyn"
             target="_blank"
