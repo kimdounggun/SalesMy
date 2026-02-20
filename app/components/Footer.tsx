@@ -2,7 +2,7 @@
 
 export function Footer() {
   return (
-    <footer className="border-t border-gray-200 bg-primary px-4 py-12 text-gray-300 sm:px-6 lg:px-8">
+    <footer className="border-t border-gray-200 bg-primary px-4 py-10 text-gray-300 sm:px-6 sm:py-12 lg:px-8">
       <div className="mx-auto max-w-6xl">
         <div className="flex flex-col gap-8 sm:flex-row sm:items-center sm:justify-between">
           <div className="min-w-0">
@@ -18,7 +18,7 @@ export function Footer() {
             </a>
           </div>
         </div>
-        <div className="mt-8 grid gap-x-8 gap-y-1 border-t border-gray-700 pt-8 text-sm sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-6 grid gap-x-6 gap-y-1 border-t border-gray-700 pt-6 text-xs sm:mt-8 sm:gap-x-8 sm:pt-8 sm:text-sm sm:grid-cols-2 lg:grid-cols-4">
           <p>상호명: 포르티스 시스템</p>
           <p>사업자등록번호: 741-48-01140</p>
           <p>

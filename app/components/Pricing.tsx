@@ -46,7 +46,7 @@ const plans = [
 
 export function Pricing() {
   return (
-    <section id="pricing" className="bg-white px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+    <section id="pricing" className="bg-white px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
       <div className="mx-auto max-w-6xl">
         <SectionFade>
           <h2 className="text-center text-2xl font-bold text-primary sm:text-3xl">
@@ -63,7 +63,7 @@ export function Pricing() {
           {plans.map((plan, i) => (
             <SectionFade key={plan.name} delayOrder={2 + i} className="h-full">
               <div
-                className={`relative flex h-full min-h-[420px] flex-col rounded-2xl border-2 p-6 sm:p-8 ${
+                className={`relative flex h-full min-h-[380px] flex-col rounded-2xl border-2 p-5 sm:min-h-[420px] sm:p-6 lg:p-8 ${
                   plan.highlight
                     ? "border-accent bg-accent/5 shadow-lg shadow-accent/10"
                     : "border-gray-200 bg-white"
@@ -92,16 +92,16 @@ export function Pricing() {
                       </span>
                     </div>
                   )}
-                  <div className="flex flex-wrap items-baseline gap-x-1 gap-y-0">
-                    <span className="text-2xl font-bold text-primary sm:text-3xl">
+                  <div className="flex flex-wrap items-baseline gap-x-1 gap-y-0 break-keep">
+                    <span className="text-2xl font-bold text-primary sm:text-3xl whitespace-nowrap">
                       {plan.price}
                     </span>
                     {plan.unit && (
-                      <span className="text-sm text-primary/70">원/{plan.unit}</span>
+                      <span className="text-sm text-primary/70 whitespace-nowrap">원/{plan.unit}</span>
                     )}
                   </div>
                 </div>
-                <p className="mt-2 text-sm leading-relaxed text-primary/70">{plan.desc}</p>
+                <p className="mt-2 text-sm leading-relaxed text-primary/70 break-keep">{plan.desc}</p>
                 <ul className="mt-6 flex-1 space-y-3">
                   {plan.features.map((f) => (
                     <li key={f} className="flex items-start gap-2 text-sm text-primary">
@@ -114,7 +114,7 @@ export function Pricing() {
                   href="https://pf.kakao.com/_eBxjyn"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`mt-auto block w-full rounded-xl py-3.5 text-center text-sm font-semibold transition ${
+                  className={`mt-auto block w-full rounded-xl py-3.5 text-center text-sm font-semibold transition active:scale-95 touch-manipulation whitespace-nowrap ${
                     plan.highlight
                       ? "bg-accent text-white hover:bg-accent/90"
                       : "bg-primary text-white hover:bg-primary/90"
@@ -132,7 +132,7 @@ export function Pricing() {
             href="https://pf.kakao.com/_eBxjyn"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex rounded-full bg-accent px-6 py-3 text-sm font-semibold text-white transition hover:bg-accent/90"
+            className="inline-flex rounded-full bg-accent px-6 py-3 text-sm font-semibold text-white transition active:scale-95 hover:bg-accent/90 touch-manipulation whitespace-nowrap"
           >
             지금 신청하고 매출 올리기
           </a>

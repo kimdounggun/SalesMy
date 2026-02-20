@@ -35,11 +35,12 @@ export function Review() {
   }, []);
 
   return (
-    <section id="review" className="bg-bgGray px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+    <section id="review" className="bg-bgGray px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
       <div className="mx-auto max-w-6xl">
         <SectionFade>
-          <h2 className="text-center text-2xl font-bold text-primary sm:text-3xl">
-            이미 100+명의 전문가가 사용 중입니다
+          <h2 className="text-center text-2xl font-bold text-primary break-keep sm:text-3xl">
+            <span className="whitespace-nowrap">이미 100+명의 전문가가</span>{" "}
+            <span className="whitespace-nowrap">사용 중입니다</span>
           </h2>
         </SectionFade>
         <SectionFade delayOrder={1}>
@@ -49,7 +50,7 @@ export function Review() {
         </SectionFade>
 
         <SectionFade delayOrder={2} className="mx-auto mt-12 max-w-4xl">
-          <div className="relative overflow-hidden rounded-2xl border border-gray-200 bg-white p-8 shadow-sm sm:p-10">
+          <div className="relative overflow-hidden rounded-2xl border border-gray-200 bg-white p-6 shadow-sm sm:p-8 lg:p-10">
             <Quote className="absolute right-6 top-6 h-10 w-10 text-accent/20" />
             <AnimatePresence mode="wait">
               <motion.div
@@ -60,7 +61,7 @@ export function Review() {
                 transition={{ duration: 0.3 }}
                 className="relative"
               >
-                <p className="text-lg leading-relaxed text-primary sm:text-xl">
+                <p className="text-base leading-relaxed text-primary break-keep sm:text-lg lg:text-xl">
                   &ldquo;{reviews[index].text}&rdquo;
                 </p>
                 <p className="mt-4 font-medium text-primary/80">— {reviews[index].author}</p>
@@ -71,7 +72,7 @@ export function Review() {
               <button
                 type="button"
                 aria-label="이전 후기"
-                className="rounded-full p-2 text-primary/70 transition hover:bg-bgGray hover:text-primary"
+                className="rounded-full p-2 text-primary/70 transition active:scale-95 hover:bg-bgGray hover:text-primary touch-manipulation"
                 onClick={() => setIndex((i) => (i - 1 + reviews.length) % reviews.length)}
               >
                 <ChevronLeft className="h-6 w-6" />
@@ -82,7 +83,7 @@ export function Review() {
                     key={i}
                     type="button"
                     aria-label={`후기 ${i + 1}`}
-                    className={`h-2 w-2 rounded-full transition ${
+                    className={`h-2 w-2 rounded-full transition touch-manipulation ${
                       i === index ? "bg-accent w-6" : "bg-gray-300"
                     }`}
                     onClick={() => setIndex(i)}
@@ -92,7 +93,7 @@ export function Review() {
               <button
                 type="button"
                 aria-label="다음 후기"
-                className="rounded-full p-2 text-primary/70 transition hover:bg-bgGray hover:text-primary"
+                className="rounded-full p-2 text-primary/70 transition active:scale-95 hover:bg-bgGray hover:text-primary touch-manipulation"
                 onClick={() => setIndex((i) => (i + 1) % reviews.length)}
               >
                 <ChevronRight className="h-6 w-6" />

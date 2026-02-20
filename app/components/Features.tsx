@@ -24,7 +24,7 @@ const features = [
 
 export function Features() {
   return (
-    <section id="features" className="bg-white px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+    <section id="features" className="bg-white px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
       <div className="mx-auto max-w-6xl">
         <SectionFade>
           <h2 className="text-center text-2xl font-bold text-primary sm:text-3xl">
@@ -32,7 +32,7 @@ export function Features() {
           </h2>
         </SectionFade>
         <SectionFade delayOrder={1}>
-          <p className="mx-auto mt-3 max-w-2xl text-center text-base text-primary/70">
+          <p className="mx-auto mt-3 max-w-2xl text-center text-base text-primary/70 break-keep">
             영업 효율을 높이는 세 가지 축
           </p>
         </SectionFade>
@@ -40,11 +40,11 @@ export function Features() {
         <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:mt-16 lg:grid-cols-3 lg:items-stretch">
           {features.map((item, i) => (
             <SectionFade key={item.title} delayOrder={2 + i} className="h-full">
-              <div className="flex h-full flex-col rounded-2xl border border-gray-200 bg-bgGray/50 p-6 sm:p-8">
+              <div className="flex h-full flex-col rounded-2xl border border-gray-200 bg-bgGray/50 p-5 sm:p-6 lg:p-8">
                 <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-accent text-white">
                   <item.icon className="h-7 w-7" />
                 </div>
-                <h3 className="mt-5 text-lg font-semibold text-primary">{item.title}</h3>
+                <h3 className="mt-5 text-lg font-semibold text-primary break-keep whitespace-nowrap">{item.title}</h3>
                 <p className="mt-3 flex-1 text-sm leading-relaxed text-primary/70 break-keep">{item.desc}</p>
               </div>
             </SectionFade>
@@ -56,7 +56,7 @@ export function Features() {
             href="https://pf.kakao.com/_eBxjyn"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex rounded-full bg-accent px-6 py-3 text-sm font-semibold text-white transition hover:bg-accent/90"
+            className="inline-flex rounded-full bg-accent px-6 py-3 text-sm font-semibold text-white transition active:scale-95 hover:bg-accent/90 touch-manipulation whitespace-nowrap"
           >
             지금 신청하고 매출 올리기
           </a>

@@ -24,7 +24,7 @@ export function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section className="bg-bgGray px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+    <section className="bg-bgGray px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
       <div className="mx-auto max-w-6xl">
         <SectionFade>
           <h2 className="text-center text-2xl font-bold text-primary sm:text-3xl">
@@ -38,7 +38,7 @@ export function FAQ() {
               <div className="overflow-hidden rounded-xl border border-gray-200 bg-white">
                 <button
                   type="button"
-                  className="flex w-full items-center justify-between px-5 py-4 text-left font-medium text-primary hover:bg-gray-50 sm:px-6"
+                  className="flex w-full items-center justify-between px-4 py-3.5 text-left text-sm font-medium text-primary active:bg-gray-50 hover:bg-gray-50 sm:px-5 sm:py-4 sm:text-base touch-manipulation"
                   onClick={() => setOpenIndex(openIndex === i ? null : i)}
                   aria-expanded={openIndex === i}
                 >
